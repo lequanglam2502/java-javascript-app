@@ -1,0 +1,30 @@
+<table class="table">
+
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Symbol</th>
+      <th scope="col">Price</th>
+      <th scope="col">Trend</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let data of stockList">
+  
+  <tr *ngIf="data.trend=='Up'" style="background-color:#00FF00">
+      <td>{{data.symbol}}</td>
+      <td>{{data.price}}</td>
+      <td> <p> <span class="glyphicon glyphicon-arrow-up"></span> </p> </td>
+    </tr>
+  
+    <tr *ngIf="data.trend=='Down'" style="background-color:#FF0000">
+      <td>{{data.symbol}}</td>
+      <td>{{data.price}}</td>
+      <td><p> <span class="glyphicon glyphicon-arrow-down"></span> </p></td>
+    </tr>
+    
+    <tr *ngIf="data.trend=='Equal'" style="background-color:#FFFF33">
+      <td>{{data.symbol}}</td>
+      <td>{{data.price}}</td>
+      <td><p> - </p></td>
+    </tr>
+  </tbody>
+</table>

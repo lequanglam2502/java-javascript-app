@@ -1,0 +1,28 @@
+<nav class="navbar navbar-inverse">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="#" id="appTitleId">COLIN APP</a>
+		</div>
+		<ul class="nav navbar-nav">
+			<li *ngIf="role"><a href="#">BackEnd Data</a></li>
+			<li *ngIf="role"><a href="stock">Stock</a></li>
+			<li class="dropdown" *ngIf="role"><a class="dropdown-toggle"
+				data-toggle="dropdown" href="#">Algorithm<span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a href="#">DBF</a></li>
+
+				</ul></li>
+		</ul>
+		<ul class="nav navbar-nav navbar-right">
+			<li *ngIf="role"><a href="#"><span
+					class="glyphicon glyphicon-user"></span> {{username}}</a></li>
+			<li *ngIf="role"><a (click)="logout()" href=""><span
+					class="glyphicon glyphicon-log-out"></span>Logout</a></li>
+		</ul>
+	</div>
+</nav>
+
+<div class="container">
+	<!-- pages containers and router -->
+	<router-outlet></router-outlet>
+</div>

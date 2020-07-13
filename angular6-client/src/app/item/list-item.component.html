@@ -1,0 +1,69 @@
+<div class="table-wrapper">
+	<div class="table-title">
+		<div class="row">
+			<div class="col-sm-6">
+				<h2>
+					<b>Item</b>
+				</h2>
+				
+			</div>
+			<div class="col-sm-6">
+				<a href="#addEmployeeModal" class="btn btn-success"
+					data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add Item</span></a>
+				<!-- will implement delete many items later -->
+				<!-- <a href="#deleteEmployeeModal"
+					class="btn btn-danger" data-toggle="modal"><i
+					class="material-icons">&#xE15C;</i> <span>Delete</span></a> -->
+			</div>
+		</div>
+	</div>
+	<table class="table table-striped table-hover">
+		<thead>
+			<tr>
+				<th><span class="custom-checkbox"> <input
+						type="checkbox" id="selectAll"> <label for="selectAll"></label>
+				</span></th>
+				<th>Id</th>
+				<th>Name</th>
+				<th>Value</th>
+				<th>Date</th>
+				<th>Actions</th>
+			</tr>
+		</thead>
+		<tbody *ngFor="let item of itemList let i=index">
+			<tr>
+				<td><span class="custom-checkbox"> <input
+						type="checkbox" id="checkbox1" name="options[]" value="1">
+						<label for="checkbox1"></label>
+				</span></td>
+				<td>{{item.itemId}}</td>
+				<td>{{item.name}}</td>
+				<td>{{item.value}}</td>
+				<td>{{item.date | date}}</td>
+				<td><a (click)="onEditDialog(item)" href="#editEmployeeModal" class="edit" data-toggle="modal">
+						<i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a> 
+					<a (click)="onDeleteDialog(item)" href="#deleteEmployeeModal" class="delete" data-toggle="modal">
+						<i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<div class="clearfix">
+		<div class="hint-text">
+			Showing <b>{{itemList.length}}</b> out of <b>{{itemList.length}}</b> entries
+		</div>
+		
+		<!-- will implement pagination feature later -->
+		<!-- <ul class="pagination">
+			<li class="page-item disabled"><a href="#">Previous</a></li>
+			<li class="page-item"><a href="#" class="page-link">1</a></li>
+			<li class="page-item active"><a href="#" class="page-link">3</a></li>
+			<li class="page-item"><a href="#" class="page-link">5</a></li>
+			<li class="page-item"><a href="#" class="page-link">Next</a></li>
+		</ul> -->
+	</div>
+</div>
+
+<create-item (outItem)="onAddConfirm($event)" id="addEmployeeModal" class="modal fade"> </create-item>
+<edit-item [inItem]="choosedItem" (outItem)="onEditConfirm($event)" id="editEmployeeModal" class="modal fade"> </edit-item>
+<delete-item [inItem]="choosedItem" (outItem)="onDeleteConfirm($event)" id="deleteEmployeeModal" class="modal fade"> </delete-item>

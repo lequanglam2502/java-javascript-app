@@ -1,0 +1,32 @@
+<!-- Edit Modal HTML -->
+<div>
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<form>
+				<div class="modal-header">
+					<h4 class="modal-title">Add Item</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				</div>
+				<div class="modal-body">
+					<div class="form-group">
+						<label>Id</label>
+						<span class="text-danger" *ngIf="errorMessage">{{errorMessage}}</span>
+						<input [(ngModel)]="item.itemId" class="form-control" name="itemId" id="itemId" required >
+					</div>
+					<div class="form-group">
+						<label>Name</label>
+						<input [(ngModel)]="item.name" class="form-control" name="itemName" id="itemName" required>
+					</div>
+					<div class="form-group">
+						<label>Value</label>
+						<textarea [(ngModel)]="item.value" class="form-control" name="itemValue" id="itemValue" required></textarea>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<input type="button" class="btn btn-default" id="createCancel" data-dismiss="modal" value="Cancel"> 
+					<input (click)="onAdd(item)" type="submit" class="btn btn-success" value="Add">
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
