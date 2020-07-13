@@ -6,7 +6,12 @@ This is simple application Registration and Login based on angular and rest-api 
  -- Spring Boot
  -- Spring Security
  -- Spring MVC
- -- JPA
+ -- Spring AOP
+ -- Spring Data JPA, Hibernate
+ -- SSL, JSON Web Token
+ -- MySQL DB
+ -- Redis Cache
+ -- EHCache
  -- Rest-API
  -- Angular 6
  
