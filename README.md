@@ -1,16 +1,16 @@
 # J2EE-Spring boot,Spring-Security, JPA, REST- angular-login
 This is simple application Registration and Login based on angular and rest-api wher user can communication over API from UI to core engine. 
 
-Technologies uses:
+# Technologies uses:
  -- Java (1.8), J2EE
  -- Spring Boot
  -- Spring Security
- -- Spring Annotation
+ -- Spring MVC
  -- JPA
  -- Rest-API
- -- Angular 4
+ -- Angular 6
  
-Projecet Run Process with commandlines: 
+# Projecet Run Process with commandlines: 
  -- mvn clean install 
  -- mvn spring-boot:run
  -- Run the Angular App with command: npm start
